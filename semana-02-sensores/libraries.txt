@@ -1,0 +1,4 @@
+# Wokwi Library List
+# Adicione no gerenciador de bibliotecas do projeto (aba "Library Manager")
+DHT sensor library
+Adafruit Unified Sensor
