@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Lucas Antonio Gomes (RA 823126987)",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": -134.2, "left": 19.2, "attrs": { "color": "green", "label": "BTN D2" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -110.4, "left": 172.25, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "led1", "top": -186, "left": 167, "attrs": { "color": "red", "label": "LED D8" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 248.3, "left": 115, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 230.7, "left": 311.4, "attrs": { "temperature": "25", "humidity": "50" } }
+  ],
+  "connections": [
+    [ "btn1:1.l", "uno:2", "green", [ "h-19.2", "v96", "h230.4" ] ],
+    [ "btn1:2.r", "uno:GND.1", "black", [ "h9.8", "v57.8" ] ],
+    [ "uno:8", "r1:2", "orange", [ "v0" ] ],
+    [ "r1:1", "led1:A", "orange", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "v0" ] ],
+    [ "pot1:SIG", "uno:A0", "blue", [ "v0" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "dht1:GND", "uno:GND.3", "black", [ "v0" ] ],
+    [ "dht1:SDA", "uno:4", "purple", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
