@@ -1,0 +1,40 @@
+id,atividade,marcacao_inicial,evento_ou_tempo,transicao_disparada,esperado,obtido,situacao
+S01,A24 semáforo,E0,tempo em E0 = 7.9 s,nenhuma,E0,E0,PASSA
+S02,A24 semáforo,E0,tempo em E0 = 8.0 s,T0,E1,E1,PASSA
+S03,A24 semáforo,E1,tempo em E1 = 9.9 s,nenhuma,E1,E1,PASSA
+S04,A24 semáforo,E1,tempo em E1 = 10.0 s,T1,E2,E2,PASSA
+S05,A24 semáforo,E2,tempo em E2 = 2.9 s,nenhuma,E2,E2,PASSA
+S06,A24 semáforo,E2,tempo em E2 = 3.0 s,T2,E0,E0,PASSA
+R01,A23 reservatório,E0,START com nível baixo,T0,E1,E1,PASSA
+R02,A23 reservatório,E0,sem START,nenhuma,E0,E0,PASSA
+R03,A23 reservatório,E1,nível alto atingido,T1,E2,E2,PASSA
+R04,A23 reservatório,E2,"29,9 s misturando",nenhuma,E2,E2,PASSA
+R05,A23 reservatório,E2,30 s misturando,T2,E3,E3,PASSA
+R06,A23 reservatório,E3,nível baixo após drenar,T3,E0,E0,PASSA
+R07,A23 reservatório,E0,FALHA_NIVEL: alto e baixo juntos,nenhuma,E0,E0,PASSA
+P01,A25 porta,E0,presença,T0,E1,E1,PASSA
+P02,A25 porta,E1,porta aberta,T1,E2,E2,PASSA
+P03,A25 porta,E3,presença durante fechamento: reabrir,T4,E1,E1,PASSA
+P04,A25 porta,E1,emergência abrindo,T91,E99,E99,PASSA
+P05,A25 porta,E99,RESET com emergência ativa,nenhuma,E99,E99,PASSA
+P06,A25 porta,E99,"RESET, emergência liberada, porta fechada",T99,E0,E0,PASSA
+P07,A25 porta,E2,"4,9 s aberta",nenhuma,E2,E2,PASSA
+P08,A25 porta,E2,5 s aberta e área livre,T2,E3,E3,PASSA
+P09,A25 porta,E2,presença mantém aberta,nenhuma,E2,E2,PASSA
+P10,A25 porta,E3,fechamento confirmado,T3,E0,E0,PASSA
+P11,A25 porta,E99,emergência liberada sem RESET,nenhuma,E99,E99,PASSA
+P12,A25 porta,E0,emergência domina presença,T90,E99,E99,PASSA
+E01,A26 esteira,E1,leitura ausente: espera,nenhuma,E1,E1,PASSA
+E02,A26 esteira,E1,peça A → DESVIO_A,T1,E2,E2,PASSA
+E03,A26 esteira,E1,peça B → DESVIO_B,T2,E4,E4,PASSA
+E04,A26 esteira,E1,inconsistência → falha,T3,E90,E90,PASSA
+E05,A26 esteira,E3,retorno não confirmado: esteira bloqueada,nenhuma,E3,E3,PASSA
+E06,A26 esteira,E1,"antes de 0,5 s de estabilização",nenhuma,E1,E1,PASSA
+E07,A26 esteira,E0,atuador A não recolhido,nenhuma,E0,E0,PASSA
+E08,A26 esteira,E90,RESET após correção,T8,E6,E6,PASSA
+E09,A26 esteira,E6,"peça saiu, novo ciclo",T9,E0,E0,PASSA
+X01,Exemplo esteira atuador,E0,FC_RET=0 no início: não dispara T0,nenhuma,E0,E0,PASSA
+X02,Exemplo esteira atuador,E0,peça detectada,T0,E1,E1,PASSA
+X03,Exemplo esteira atuador,E2,FC_AV não chega: permanece,nenhuma,E2,E2,PASSA
+X04,Exemplo esteira atuador,E2,S_PECA oscila em E2: não altera,nenhuma,E2,E2,PASSA
+X05,Exemplo esteira atuador,E4,estação liberada,T4,E0,E0,PASSA

@@ -1,0 +1,7 @@
+passo,marcacao,tempo_na_etapa,transicao,nova_marcacao
+0,E0,7.9 s,nenhuma,E0
+1,E0,8.0 s,T0,E1
+2,E1,9.9 s,nenhuma,E1
+3,E1,10.0 s,T1,E2
+4,E2,2.9 s,nenhuma,E2
+5,E2,3.0 s,T2,E0
