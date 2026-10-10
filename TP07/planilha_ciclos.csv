@@ -1,0 +1,8 @@
+instante,etapa_ativa,M_EST,Y_VALV,T_ENCH.ET_s,C_LOTE.CV,LOTE_OK
+t0 sem peça,E0,1,0,0.0,0,0
+t1 S_PECA=1,E1,0,1,0.1,0,0
+t2 enchendo (2 s),E1,0,1,2.1,0,0
+t3 ET=4 s,E1,0,1,4.0,0,0
+t3+ E2 liberando,E2,1,0,0.0,0,0
+t4 S_PECA cai,E0,1,0,0.0,1,0
+t5 novo ciclo,E0,1,0,0.0,1,0
