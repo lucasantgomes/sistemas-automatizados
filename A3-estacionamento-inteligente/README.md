@@ -35,14 +35,21 @@ O sistema faz o controle de acesso de um estacionamento com CLP, programado em l
 
 ## Como abrir a lógica no simulador
 
-O PLC Simulator Online guarda o projeto só no navegador. Para abrir a lógica em qualquer computador:
+O PLC Simulator Online guarda o projeto só no navegador. Para abrir a lógica em outro computador:
 
-1. Abra **https://app.plcsimulator.online** no Chrome.
-2. Pressione **F12** e vá até a aba **Console**.
-3. Cole todo o conteúdo de [`logica/gerar_programa.js`](logica/gerar_programa.js) e pressione **Enter**. Se o Chrome bloquear a colagem, digite `allow pasting`, pressione Enter e cole de novo.
-4. A página recarrega já com os 19 degraus e todas as variáveis.
+1. Abra **https://app.plcsimulator.online** no Chrome ou no Edge e espere o editor carregar. Se aparecer a página "PLC Simulator Online is moving to Rungs Studio", clique em **Keep using PLC Simulator Online**.
+2. Em outra aba, abra o script:
+   https://raw.githubusercontent.com/lucasantgomes/sistemas-automatizados/main/A3-estacionamento-inteligente/logica/gerar_programa.js
+   Depois aperte **Ctrl + A** e **Ctrl + C**.
+3. Volte para a aba do simulador e aperte **Ctrl + Shift + J**. O Console abre (se não abrir, aperte F12 e clique na aba **Console**).
+4. Clique na última linha do Console, aperte **Ctrl + V** e depois **Enter**.
+   - Na primeira vez, o Chrome bloqueia a colagem. Digite `permitir colar` (no Chrome em inglês, `allow pasting`), aperte Enter, cole de novo e aperte Enter.
+5. Deve aparecer **✅ Programa do estacionamento carregado**, e a página recarrega sozinha.
+6. Confira se deu certo: a lista de variáveis começa com `S_ENT_PRES` e `VAGAS_LIVRES` mostra 5. Feche o Console (Ctrl + Shift + J).
 
-> ⚠️ O script **substitui** o projeto que estiver aberto no simulador.
+Se aparecer **❌ O simulador ainda não terminou de carregar**, aperte F5, espere o editor aparecer e repita os passos 3 e 4.
+
+> ⚠️ O script **substitui** o projeto que estiver aberto no simulador. Depois de carregado, o programa fica salvo naquele navegador. Não clique em "novo projeto".
 
 ## Mapa de entradas e saídas
 
