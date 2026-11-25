@@ -14,6 +14,7 @@ Repositório com as entregas semanais da UC. Cada pasta é autossuficiente e tem
 |5|[`TP05`](TP05)|Sistemas sequenciais e GRAFCET/SFC|diagrams.net|
 |6|[`TP06`](TP06)|CLP e linguagem Ladder: partida com selo|PLC Simulator Online|
 |7|[`TP07`](TP07)|Programação sequencial de CLP: TON, CTU e GRAFCET → Ladder|PLC Simulator Online|
+|A3|[`A3-estacionamento-inteligente`](A3-estacionamento-inteligente)|Projeto A3 (em grupo): estacionamento inteligente com CTU/CTD, TON e bloqueio por lotação|PLC Simulator Online|
 
 ## Links
 
