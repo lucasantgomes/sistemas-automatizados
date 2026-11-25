@@ -158,7 +158,14 @@ async function carregarPrograma() {
   const root = {};
   for (const [k, v] of Object.entries(prog)) root[k] = JSON.stringify(v);
   root._persist = JSON.stringify({ version: 3, rehydrated: true });
+  if (location.hostname !== 'app.plcsimulator.online') {
+    throw new Error('Abra https://app.plcsimulator.online e cole o script no Console dessa página.');
+  }
   const db = await new Promise(r => { const q = indexedDB.open('localforage'); q.onsuccess = () => r(q.result); });
+  if (!db.objectStoreNames.contains('keyvaluepairs')) {
+    db.close();
+    throw new Error('O simulador ainda não terminou de carregar. Aperte F5, espere o diagrama aparecer e cole o script de novo.');
+  }
   await new Promise((res, rej) => {
     const tx = db.transaction('keyvaluepairs', 'readwrite');
     tx.objectStore('keyvaluepairs').put(JSON.stringify(root), 'persist:root');
@@ -168,4 +175,6 @@ async function carregarPrograma() {
   return 'ok: ' + prog.runglist.length + ' rungs, ' + Object.keys(prog.variables).length + ' variáveis';
 }
 
-carregarPrograma().then(console.log);
+carregarPrograma()
+  .then(msg => console.log('✅ Programa do estacionamento carregado (' + msg + '). A página vai recarregar.'))
+  .catch(e => console.error('❌ ' + e.message));
